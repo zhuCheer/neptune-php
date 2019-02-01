@@ -1,0 +1,44 @@
+syntax = "proto3";
+package neptune;
+
+service NeptunePool {
+      rpc Ping (PingRequest) returns (PingReply) {}
+      rpc DoRegist (DoRegistRequest) returns (DoResponse){}
+      rpc DoRelease (DoReleaseRequest) returns (DoResponse){}
+      rpc DoFun (DoRequest) returns (DoResponse){}
+
+}
+
+
+
+message PingRequest {
+  string name = 1;
+}
+
+
+message PingReply {
+  string message = 1;
+}
+
+message DoRegistRequest{
+    string  Address = 1;
+    string  Auth = 2;
+    uint32  InitialCap = 3;
+    uint32  MaxCap = 4;
+    sint64  IdleTimeout = 5;
+    uint32  DBNum = 6;
+}
+
+message DoRequest{
+    string RegistId =1;
+    string Name = 2;
+    bytes  Params = 3;
+}
+
+message DoReleaseRequest{
+    string RegistId =1;
+}
+
+message DoResponse{
+    bytes  Response = 1;
+}

@@ -1,0 +1,24 @@
+{
+    "name": "cheer/neptune-php",
+    "description": "Redis Connection pool client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chase.Q",
+            "email": "zhucheer@qq.com"
+        }
+    ],
+    "autoload": {
+	    "psr-4": {
+                "Cheer\\NeptuneClient\\": "src/",
+                "Neptune\\": "grpc/Neptune/",
+                "GPBMetadata\\":"grpc/GPBMetadata/"
+	    }
+    },
+    "autoload-dev": {},
+    "require": {
+    	"php": ">=5.6.3",
+        "grpc/grpc": "^1.15"
+    },
+    "require-dev": {}
+}
